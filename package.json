@@ -1,0 +1,45 @@
+{
+  "name": "amazfit-bip-watchfaces-proxy",
+  "version": "1.0.0",
+  "description": "Proxy to provide custom watchfaces for Amazfit BIP on iOS",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -r ./dist",
+    "build": "npm run clean; tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxnowack/amazfit-watchfaces-proxy.git"
+  },
+  "keywords": [
+    "amazfit",
+    "watchfaces",
+    "proxy"
+  ],
+  "author": "Max Nowack <max@unsou.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxnowack/amazfit-watchfaces-proxy/issues"
+  },
+  "homepage": "https://github.com/maxnowack/amazfit-watchfaces-proxy#readme",
+  "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/node": "^10.5.1",
+    "@types/query-string": "^6.1.0",
+    "nodemon": "^1.17.5",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@types/cookie": "^0.3.1",
+    "cookie": "^0.3.1",
+    "dotenv": "^6.0.0",
+    "proxifier": "file:../proxifier",
+    "query-string": "^6.1.0"
+  }
+}
